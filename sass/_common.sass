@@ -54,6 +54,8 @@ body
 	+f
 	font-size: 12px 
 	line-height: 1.4
+a
+	text-decoration: none
 
 
 // common blocks      
@@ -63,15 +65,69 @@ body
 	left: 0
 	right: 0
 	bottom: 0
+	min-width: 1135px
 
 .sidebar
-	position: absolute
+	position: fixed
 	top: 0
 	left: 0
 	bottom: 0
 	width: 235px
+	min-height: 800px
+	padding: 50px 20px
 	background: url(../img/bg-sidebar.jpg) no-repeat
 	background-size: cover
+	box-sizing: border-box
+	text-align: center
+
+.logo
+	display: inline-block
+	margin-bottom: 40px
+	+s(logo)
+	vertical-align: top
+
+.nav
+	position: relative
+	padding: 30px 0
+	&:before, &:after
+		content: ""
+		position: absolute
+		left: 50%
+		width: 28px
+		height: 2px
+		margin-left: -14px
+		border: 1px solid #987761
+		border-width: 1px 0 
+	&:before
+		top: 0
+	&:after
+		bottom: 0
+	a
+		display: block
+		padding: 14px 0
+		font-size: 18px
+		color: #fff 
+
+.kiev
+	position: absolute
+	left: 20px
+	right: 20px
+	bottom: 60px 
+	font-family: Arial, sans-serif 
+	font-size: 11px
+	.kiev__cup
+		display: inline-block
+		margin-bottom: 15px
+		+s(beer-cup)
+		vertical-align: top
+	.kiev__title
+		margin-bottom: 20px
+		text-transform: uppercase
+		color: #FFF
+	.kiev__addresses
+		li
+			margin-bottom: 5px
+			color: #8f6f5c 
 	
 .section
 	position: absolute
@@ -83,29 +139,110 @@ body
 .posts
 	overflow: hidden
 	.posts__item	
+		position: relative
 		float: left
+		&.is-right
+			float: right
+		.social
+			position: absolute
+			left: 25px
+			bottom: 25px
+			z-index: 4
+	.posts__item_w5
+		width: 100%
+		background: red 
+		.posts__in
+			padding-bottom: 60%
+	.posts__item_w2
+		width: 40%
+		.posts__in
+			padding-bottom: 50%
+		.posts__title
+			font-size: 27px 
+			line-height: 1
+	.posts__item_h2
+		.posts__in
+			padding-bottom: 100%
+	.posts__item_w1
+		width: 20%
+	.posts_green
+		.posts__in
+			background: #2b3d00
+		.posts__date
+			color: #FFC238 
+		.posts__title
+			color: #fff 
+	.posts__item_arr
+		z-index: 2 
+		&:before
+			content: ""
+			position: absolute
+			top: -7px
+			left: 32px
+			+arr(16,8,#fff,t)
 	.posts__in
+		display: block
 		position: relative
 		width: 100%
 		padding-bottom: 100%
-	.posts__pic
+		text-decoration: none
+		color: #000 
+		z-index: 2
+	.posts__pic, .posts__content, .posts__fb, .posts__club
 		position: absolute
 		top: 0
 		left: 0
 		right: 0
 		bottom: 0
+	.posts__pic
 		background-position: 50% 50% 
 		background-size: cover 
-	.posts__item_w5
-		width: 100%
-		height: 60%
-		background: red 
-	.posts__item_w2
-		width: 40%
-	.posts__item_w1
-		width: 20%
+	.posts__content
+		padding: 25px
+	.posts__date
+		margin-bottom: 5px
+		font-size: 13px
+		color: #74280D
+	.posts__title
+		font-size: 15px
+	.posts__fb
+		background: #3b5997
+		i
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -11px 0 0 -47px
+			+s(posts-fb)
+	.posts__club
+		background: #74280c
+		i
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -65px 0 0 -65px
+			+s(beer-club)
 
-
+.social
+	font-size: 0
+	&.social_white
+		.social__vk
+			+s(vk-w)
+		.social__tw
+			+s(tw-w)
+		.social__fb
+			+s(fb-w)
+	a
+		display: inline-block
+		margin-left: 5px
+		vertical-align: top
+		&:first-child
+			margin: 0
+	.social__vk
+		+s(vk)
+	.social__tw
+		+s(tw)
+	.social__fb
+		+s(fb)
 
 
 
