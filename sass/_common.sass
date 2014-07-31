@@ -50,7 +50,8 @@
 =f
 	font-family: "CharisSIL Bold", Arial, sans-serif 
 
-body
+body 
+	background: #232323
 	+f
 	font-size: 12px 
 	line-height: 1.4
@@ -65,7 +66,7 @@ a
 	left: 0
 	right: 0
 	bottom: 0
-	min-width: 1135px
+	width: 1135px
 
 .sidebar
 	position: fixed
@@ -137,7 +138,40 @@ a
 	bottom: 0
 
 .posts
+	background: #FFF 
 	overflow: hidden
+	&.posts_list
+		float: right
+		width: 360px
+		overflow: hidden
+		.posts__item
+			width: 100%
+			&:nth-child(2n)
+				.posts__pic
+					left: 0
+					right: 50%
+				.posts__content
+					left: 50%
+					right: 0
+				.posts__arr
+					
+		.posts__in
+			padding-bottom: 50%
+		.posts__content
+			right: 50%
+			z-index: 4 
+		.posts__arr
+			position: absolute
+			top: 50%
+			right: -8px
+			margin-top: -8px
+			width: 0px
+			height: 0px
+			border-style: solid
+			border-width: 8px 0 8px 8px
+		.posts__pic
+			left: 50%
+			z-index: 2 
 	.posts__item	
 		position: relative
 		float: left
@@ -165,13 +199,19 @@ a
 			padding-bottom: 100%
 	.posts__item_w1
 		width: 20%
-	.posts_green
+	.posts__item_dark
 		.posts__in
 			background: #2b3d00
 		.posts__date
 			color: #FFC238 
 		.posts__title
 			color: #fff 
+		.social__vk
+			+s(vk-w)
+		.social__tw
+			+s(tw-w)
+		.social__fb
+			+s(fb-w)
 	.posts__item_arr
 		z-index: 2 
 		&:before
@@ -198,7 +238,7 @@ a
 		background-position: 50% 50% 
 		background-size: cover 
 	.posts__content
-		padding: 25px
+		padding: 25px 15px 50px 25px
 	.posts__date
 		margin-bottom: 5px
 		font-size: 13px
@@ -224,13 +264,6 @@ a
 
 .social
 	font-size: 0
-	&.social_white
-		.social__vk
-			+s(vk-w)
-		.social__tw
-			+s(tw-w)
-		.social__fb
-			+s(fb-w)
 	a
 		display: inline-block
 		margin-left: 5px
