@@ -27,7 +27,7 @@ a { text-decoration: none; }
 
 .wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 1135px; }
 
-.sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 235px; min-height: 800px; padding: 50px 20px; background: url(../img/bg-sidebar.jpg) no-repeat; background-size: cover; box-sizing: border-box; text-align: center; }
+.sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 235px; min-height: 750px; padding: 50px 20px; background: url(../img/bg-sidebar.jpg) no-repeat; background-size: cover; box-sizing: border-box; text-align: center; }
 
 .logo { display: inline-block; margin-bottom: 40px; background: url('../img/icons-s0cf3bb1fb5.png') 0 0 no-repeat; width: 118px; height: 103px; vertical-align: top; }
 
@@ -35,7 +35,7 @@ a { text-decoration: none; }
 .nav:before, .nav:after { content: ""; position: absolute; left: 50%; width: 28px; height: 2px; margin-left: -14px; border: 1px solid #987761; border-width: 1px 0; }
 .nav:before { top: 0; }
 .nav:after { bottom: 0; }
-.nav a { display: block; padding: 14px 0; font-size: 18px; color: white; }
+.nav a { display: block; padding: 8px 0; font-size: 18px; color: white; }
 
 .kiev { position: absolute; left: 20px; right: 20px; bottom: 60px; font-family: Arial, sans-serif; font-size: 11px; }
 .kiev .kiev__cup { display: inline-block; margin-bottom: 15px; background: url('../img/icons-s0cf3bb1fb5.png') 0 -316px no-repeat; width: 25px; height: 29px; vertical-align: top; }
