@@ -61,15 +61,18 @@
 +font(CharisSIL Bold, CharisSIL-Bold)  
 =fb
 	font-family: "CharisSIL Bold", Arial, sans-serif 
++font(CharisSIL Itallic, CharisSIL-Itallic)  
+=fl
+	font-family: "CharisSIL Itallic", Arial, sans-serif 
 
 body 
 	background: #232323
 	+fb
 	font-size: 12px 
 	line-height: 1.4
+	color: #161616 
 a
 	text-decoration: none
-
 
 // common blocks      
 .wrapper
@@ -88,23 +91,31 @@ a
 	left: 0
 	bottom: 0
 	width: 235px
-	padding: 50px 20px
+	padding: 50px 0
 	background: url(../img/bg-sidebar.jpg) no-repeat
 	background-size: cover
 	box-sizing: border-box
 	text-align: center
 	overflow: auto
+	z-index: 6 
+	+rth(800)
+		padding: 0
 
 .logo
 	display: inline-block
 	margin-bottom: 40px
 	+s(logo)
 	vertical-align: top
+	+rth(800)
+		margin-bottom: 20px
 
 .nav
 	position: relative
 	padding: 30px 0
 	margin-bottom: 40px
+	+rth(800)
+		padding: 15px 0
+		margin-bottom: 20px
 	&:before, &:after
 		content: ""
 		position: absolute
@@ -118,15 +129,77 @@ a
 		top: 0
 	&:after
 		bottom: 0
-	a
+	>a
+		position: relative
 		display: block
-		padding: 9px 20px
+		padding: 9px 40px
 		+f
 		font-size: 18px
 		color: #fff 
 		line-height: 1.2
-		&.nav__order
+		+rth(800)
+			padding: 5px 20px
+		&:hover, &.is-active
 			color: #d8b89e
+		&.nav__order
+			&.is-active
+				position: relative
+				&:after
+					content: ""
+					position: absolute
+					right: 0
+					top: 50%
+					margin-top: -7px
+					+arr(7,14,#fff,l)
+
+.order
+	display: none
+	position: absolute
+	top: 0
+	left: 235px
+	bottom: 0
+	width: 360px
+	+vertical
+	z-index: 4
+	.order__in
+		display: inline-block
+		background: #FFF 
+		box-shadow: 0 0 11px 2px rgba(0,0,0,.13)
+		vertical-align: middle
+		text-align: left
+	.order__form
+		padding: 15px 30px
+	.order__done
+		padding: 15px 30px 30px 
+	.order__title
+		margin-bottom: 15px
+		font-size: 34px
+		line-height: 1
+	.order__footer
+		.btn
+			margin-right: 20px
+	.order__presentaion
+		display: inline-block
+		vertical-align: middle
+		font-size: 0
+		line-height: 1.2
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 8px
+			+s(order-presentation)
+		span
+			font-size: 13px
+			color: #161616 
+	.order__info
+		padding-top: 15px
+		font-size: 11px
+		color: #595959  
+	.order__text
+		margin-bottom: 25px
+		+f
+		font-size: 15px
 
 .kiev
 	position: absolute
@@ -136,6 +209,8 @@ a
 	font-family: Arial, sans-serif 
 	font-size: 11px
 	+rth(800)
+		bottom: 20px
+	+rth(600)
 		position: relative
 		left: auto
 		right: auto
@@ -149,6 +224,8 @@ a
 		margin-bottom: 25px
 		text-transform: uppercase
 		color: #FFF
+		+rth(800)
+			margin-bottom: 15px
 	.kiev__addresses
 		li
 			margin-bottom: 5px
@@ -160,6 +237,7 @@ a
 	left: 235px
 	right: 0
 	bottom: 0
+	background: #fff 
 	overflow: auto
 
 .posts
@@ -178,20 +256,61 @@ a
 				.posts__content
 					left: 50%
 					right: 0
+					background: #74280c 
+					&:after
+						right: 180px
+						border-width: 10px 10px 10px 0
+						border-color: transparent #74280c transparent transparent
+				.social
+					left: 205px 
+			&:nth-child(3n)
+				.posts__content
+					background: #934900 
+					&:after
+						border-color: transparent transparent transparent #934900
+			&:nth-child(4n)
+				.posts__content
+					background: #f4e4c2 
+					&:after
+						border-color: transparent #f4e4c2 transparent transparent
+			&:nth-child(5n)
+				.posts__content
+					background: #3b5997 
+					&:after
+						border-color: transparent transparent transparent #3b5997
+			&:nth-child(6n)
+				.posts__content
+					background: #ffc135 
+					&:after
+						border-color: transparent #ffc135 transparent transparent
+			&:nth-child(4n), &:nth-child(6n)
+				.posts__date
+					color: #74280D
+				.posts__title
+					color: #161616 
+				.social__vk
+					+s(vk)
+				.social__tw
+					+s(tw)
+				.social__fb
+					+s(fb)
 		.posts__in
 			padding-bottom: 50%
 		.posts__content
 			right: 50%
+			background: #2B3D00 
 			z-index: 4 
-		.posts__arr
-			position: absolute
-			top: 50%
-			right: -8px
-			margin-top: -8px
-			width: 0px
-			height: 0px
-			border-style: solid
-			border-width: 8px 0 8px 8px
+			&:after
+				content: ""
+				position: absolute
+				top: 50%
+				right: -10px
+				margin-top: -10px
+				width: 0px
+				height: 0px
+				border-style: solid
+				border-width: 10px 0 10px 10px
+				border-color: transparent transparent transparent #2b3d00
 		.posts__pic
 			left: 50%
 			z-index: 2 
@@ -216,6 +335,8 @@ a
 		.posts__title
 			font-size: 27px 
 			line-height: 1
+			+rt(1200)
+				font-size: 24px
 	.posts__item_h2
 		.posts__in
 			padding-bottom: 100%
@@ -301,23 +422,222 @@ a
 	.social__fb
 		+s(fb)
 
+.field
+	display: block
+	margin-bottom: 15px
+	.field__label, .field__el
+		display: block
+	.field__label
+		margin-bottom: 5px
+		+f
+		font-size: 15px
+		color: #161616 
+		span
+			color: #74280c 
+	.field__el
+		input
+			width: 100%
+			height: 46px
+			padding: 0 10px
+			background: #F6F6F6 
+			box-sizing: border-box
+			+f
+			font-size: 15px
 
+.btn
+	min-width: 150px
+	height: 46px
+	padding: 0 25px
+	background: #74280C 
+	vertical-align: middle
+	span
+		position: relative
+		top: -3px
+		+fb
+		font-size: 19px 
+		color: #fff
 
+.post
+	overflow: hidden
+	.post__head
+		padding: 25px 35px
+	.post__date
+		margin-bottom: 5px 
+		font-size: 15px
+		color: #74280D  
+	.post__title
+		font-size: 34px
+		line-height: 1
+	.post__share
+		padding: 15px 35px
+		background: #f6f6f6
+	.post__pic
+		img
+			display: block
+			width: 100%
+	.post__content
+		padding: 20px 35px 10px
 
+.content
+	+f
+	font-size: 15px
+	line-height: 1.3
+	p
+		margin-bottom: 20px
+	b, strong
+		+fb
+	a
+		color: #00AEEF
+		text-decoration: underline 
 
+.about
+	background: #F0EFEF 
+	.about__head
+		padding: 40px 50px
+	.about__title
+		margin-bottom: 10px
+		font-size: 48px
+		line-height: 1.2
+	.about__title-sub
+		margin-bottom: 25px
+		+fl
+		font-size: 29px
+		color: #a87a59 
+		line-height: 1
+	.about__beer
+		text-align: center
+	.about__beer-head, .about__beer-list
+		+clr
+	.about__beer-col
+		float: left
+		width: 33.3%
+		box-sizing: border-box
+	.about__beer-head
+		padding: 0 5%
+		font-size: 0
+	.about__beer-list
+		padding: 45px 5% 70px
+		background: #FFF 
+		.about__beer-col
+			padding: 0 20px
+	.about__beer-type
+		position: relative
+		padding-bottom: 25px
+		font-size: 24px
+		line-height: 1.2
+		&:after
+			content: ""
+			position: absolute
+			bottom: 12px
+			left: 50%
+			width: 20px
+			height: 1px
+			margin-left: -10px
+			background: #a38067  
+	.about__beer-text
+		+f
+		font-size: 16px
+	.about__slider
+		margin: 0
+		img
+			display: block
+			width: 100%
+		.slick-next, .slick-prev
+			margin-top: -32px
+			&:before
+				display: none
+		.slick-next
+			right: 60px
+			+s(about-slider-next)
+		.slick-prev
+			left: 60px
+			+s(about-slider-prev)
+		.slick-dots
+			left: auto
+			right: 60px
+			bottom: 30px
+			width: auto
+			font-size: 0
+			li
+				margin: 0 0 0 14px
+				&.slick-active
+					button
+						background: #CDCCCC 
+			button
+				background: #585152 
+				&:before
+					display: none
+	.about__project
+		padding: 60px 0 60px 120px
+		+clr
+		+rt(1200)
+			padding: 60px 0 60px 60px 
+	.about__project-hand
+		float: right
+		margin-left: 30px
+	.about__project-in
+		overflow: hidden
+	.about__project-title	
+		margin-bottom: 25px
+		font-size: 30px
+		line-height: 1 
+	.about__project-text
+		margin-bottom: 35px
+		+f
+		font-size: 15px
+		color: #424242 
+		p
+			margin-bottom: 25px
+		strong
+			+fb
 
-
-
-
-
-
-
-
-
-
-
-
-
+.actions
+	padding: 50px 60px 100px
+	background: #FFF 
+	font-size: 0
+	.actions__title
+		margin-bottom: 25px
+		font-size: 30px
+		line-height: 1
+	.actions__list
+		text-align: center
+	.actions__item
+		display: inline-block
+		width: 30%
+		margin-left: 5%
+		vertical-align: top
+		&:first-child
+			margin: 0
+	.actions__img
+		position: relative
+		margin-bottom: 25px
+		img
+			display: block
+			width: 100%
+	.actions__share
+		position: absolute
+		right: 0
+		bottom: 0
+		+s(actions-share)
+	.actions__name
+		position: relative
+		padding-bottom: 25px
+		font-size: 24px
+		line-height: 1.2
+		&:after
+			content: ""
+			position: absolute
+			bottom: 12px
+			left: 50%
+			width: 20px
+			height: 1px
+			margin-left: -10px
+			background: #a38067  
+		a
+			color: #161616 
+	.actions__text
+		+f
+		font-size: 16px
 
 
 

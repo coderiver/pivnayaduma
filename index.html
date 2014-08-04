@@ -19,7 +19,7 @@
 			<a href="#">Меню</a>
 			<a href="#">Пивоварня</a>
 			<a href="#">Контакты</a>
-			<a class="nav__order" href="#">Заказ мероприятия</a>
+			<a class="nav__order js-order-trigger" href="#">Заказ мероприятия</a>
 		</nav>
 		<div class="kiev">
 			<div class="kiev__cup"></div>
@@ -31,6 +31,52 @@
 				<li>Дмитриевская, 2</li>
 				<li>Лаврухина, 4</li>
 			</ul>
+		</div>
+	</div>
+	<!-- order -->
+	<div class="order js-order">
+		<div class="order__in">
+			<!-- 1 -->
+			<div class="order__form">
+				<div class="order__title">Заказ мероприятия</div>
+				<label class="field">
+					<span class="field__label">Компания:</span>
+					<span class="field__el">
+						<input type="text">
+					</span>
+				</label>
+				<label class="field">
+					<span class="field__label"><span>*</span>ФИО:</span>
+					<span class="field__el">
+						<input type="text">
+					</span>
+				</label>
+				<label class="field">
+					<span class="field__label"><span>*</span>Телефон:</span>
+					<span class="field__el">
+						<input type="text">
+					</span>
+				</label>
+				<label class="field">
+					<span class="field__label"><span>*</span>E-mail:</span>
+					<span class="field__el">
+						<input type="text">
+					</span>
+				</label>
+				<div class="order__footer">
+					<button class="btn"><span>Отправить</span></button>
+					<a class="order__presentaion" href="#"><i></i><span>Скачать<br>презентацию</span></a>
+				</div>
+				<div class="order__info">*Эти поля обязателные для заполнения</div>
+			</div>
+			<!-- 2 -->
+			<div class="order__done" style="display: none;">
+				<div class="order__title">Спасибо,<br>Ваш заказ принят</div>
+				<div class="order__text">В ближайшее время наши менеджеры обязательно свяжутся с Вами.</div>
+				<div class="order__footer">
+					<button class="btn"><span>Ок</span></button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- section -->
