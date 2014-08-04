@@ -46,13 +46,25 @@
 // 	+png(blabla)
 // p
 // 	+jpg(bla)
-+font(CharisSIL Bold, CharisSIL-Bold)  
+
+@mixin rt($media)
+	@media only screen and (max-width: $media + "px")
+		@content
+
+@mixin rth($media)
+	@media only screen and (max-height: $media + "px")
+		@content
+
++font(CharisSIL Regular, CharisSIL-Regular)  
 =f
+	font-family: "CharisSIL Regular", Arial, sans-serif 
++font(CharisSIL Bold, CharisSIL-Bold)  
+=fb
 	font-family: "CharisSIL Bold", Arial, sans-serif 
 
 body 
 	background: #232323
-	+f
+	+fb
 	font-size: 12px 
 	line-height: 1.4
 a
@@ -66,20 +78,22 @@ a
 	left: 0
 	right: 0
 	bottom: 0
-	width: 1135px
+	max-width: 1400px
+	min-width: 1024px
+	overflow: hidden
 
 .sidebar
-	position: fixed
+	position: absolute
 	top: 0
 	left: 0
 	bottom: 0
 	width: 235px
-	min-height: 750px
 	padding: 50px 20px
 	background: url(../img/bg-sidebar.jpg) no-repeat
 	background-size: cover
 	box-sizing: border-box
 	text-align: center
+	overflow: auto
 
 .logo
 	display: inline-block
@@ -90,6 +104,7 @@ a
 .nav
 	position: relative
 	padding: 30px 0
+	margin-bottom: 40px
 	&:before, &:after
 		content: ""
 		position: absolute
@@ -105,9 +120,13 @@ a
 		bottom: 0
 	a
 		display: block
-		padding: 8px 0
+		padding: 9px 20px
+		+f
 		font-size: 18px
 		color: #fff 
+		line-height: 1.2
+		&.nav__order
+			color: #d8b89e
 
 .kiev
 	position: absolute
@@ -116,13 +135,18 @@ a
 	bottom: 60px 
 	font-family: Arial, sans-serif 
 	font-size: 11px
+	+rth(800)
+		position: relative
+		left: auto
+		right: auto
+		bottom: auto
 	.kiev__cup
 		display: inline-block
 		margin-bottom: 15px
 		+s(beer-cup)
 		vertical-align: top
 	.kiev__title
-		margin-bottom: 20px
+		margin-bottom: 25px
 		text-transform: uppercase
 		color: #FFF
 	.kiev__addresses
@@ -136,6 +160,7 @@ a
 	left: 235px
 	right: 0
 	bottom: 0
+	overflow: auto
 
 .posts
 	background: #FFF 
@@ -153,8 +178,6 @@ a
 				.posts__content
 					left: 50%
 					right: 0
-				.posts__arr
-					
 		.posts__in
 			padding-bottom: 50%
 		.posts__content
@@ -184,7 +207,6 @@ a
 			z-index: 4
 	.posts__item_w5
 		width: 100%
-		background: red 
 		.posts__in
 			padding-bottom: 60%
 	.posts__item_w2
@@ -239,6 +261,8 @@ a
 		background-size: cover 
 	.posts__content
 		padding: 25px 15px 50px 25px
+		+rt(1400)
+			padding: 15px 10px 50px 15px
 	.posts__date
 		margin-bottom: 5px
 		font-size: 13px

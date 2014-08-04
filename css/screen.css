@@ -19,30 +19,34 @@ ul, ol { list-style-type: none; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
+@font-face { font-family: CharisSIL Regular; src: url("fonts/CharisSIL-Regular.eot"); src: url("fonts/CharisSIL-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/CharisSIL-Regular.woff") format("woff"), url("fonts/CharisSIL-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
 @font-face { font-family: CharisSIL Bold; src: url("fonts/CharisSIL-Bold.eot"); src: url("fonts/CharisSIL-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/CharisSIL-Bold.woff") format("woff"), url("fonts/CharisSIL-Bold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 
 body { background: #232323; font-family: "CharisSIL Bold", Arial, sans-serif; font-size: 12px; line-height: 1.4; }
 
 a { text-decoration: none; }
 
-.wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 1135px; }
+.wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; max-width: 1400px; min-width: 1024px; overflow: hidden; }
 
-.sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 235px; min-height: 750px; padding: 50px 20px; background: url(../img/bg-sidebar.jpg) no-repeat; background-size: cover; box-sizing: border-box; text-align: center; }
+.sidebar { position: absolute; top: 0; left: 0; bottom: 0; width: 235px; padding: 50px 20px; background: url(../img/bg-sidebar.jpg) no-repeat; background-size: cover; box-sizing: border-box; text-align: center; overflow: auto; }
 
 .logo { display: inline-block; margin-bottom: 40px; background: url('../img/icons-s0cf3bb1fb5.png') 0 0 no-repeat; width: 118px; height: 103px; vertical-align: top; }
 
-.nav { position: relative; padding: 30px 0; }
+.nav { position: relative; padding: 30px 0; margin-bottom: 40px; }
 .nav:before, .nav:after { content: ""; position: absolute; left: 50%; width: 28px; height: 2px; margin-left: -14px; border: 1px solid #987761; border-width: 1px 0; }
 .nav:before { top: 0; }
 .nav:after { bottom: 0; }
-.nav a { display: block; padding: 8px 0; font-size: 18px; color: white; }
+.nav a { display: block; padding: 9px 20px; font-family: "CharisSIL Regular", Arial, sans-serif; font-size: 18px; color: white; line-height: 1.2; }
+.nav a.nav__order { color: #d8b89e; }
 
 .kiev { position: absolute; left: 20px; right: 20px; bottom: 60px; font-family: Arial, sans-serif; font-size: 11px; }
+@media only screen and (max-height: 800px) { .kiev { position: relative; left: auto; right: auto; bottom: auto; } }
 .kiev .kiev__cup { display: inline-block; margin-bottom: 15px; background: url('../img/icons-s0cf3bb1fb5.png') 0 -316px no-repeat; width: 25px; height: 29px; vertical-align: top; }
-.kiev .kiev__title { margin-bottom: 20px; text-transform: uppercase; color: white; }
+.kiev .kiev__title { margin-bottom: 25px; text-transform: uppercase; color: white; }
 .kiev .kiev__addresses li { margin-bottom: 5px; color: #8f6f5c; }
 
-.section { position: absolute; top: 0; left: 235px; right: 0; bottom: 0; }
+.section { position: absolute; top: 0; left: 235px; right: 0; bottom: 0; overflow: auto; }
 
 .posts { background: white; overflow: hidden; }
 .posts.posts_list { float: right; width: 360px; overflow: hidden; }
@@ -56,7 +60,7 @@ a { text-decoration: none; }
 .posts .posts__item { position: relative; float: left; }
 .posts .posts__item.is-right { float: right; }
 .posts .posts__item .social { position: absolute; left: 25px; bottom: 25px; z-index: 4; }
-.posts .posts__item_w5 { width: 100%; background: red; }
+.posts .posts__item_w5 { width: 100%; }
 .posts .posts__item_w5 .posts__in { padding-bottom: 60%; }
 .posts .posts__item_w2 { width: 40%; }
 .posts .posts__item_w2 .posts__in { padding-bottom: 50%; }
@@ -75,6 +79,7 @@ a { text-decoration: none; }
 .posts .posts__pic, .posts .posts__content, .posts .posts__fb, .posts .posts__club { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 .posts .posts__pic { background-position: 50% 50%; background-size: cover; }
 .posts .posts__content { padding: 25px 15px 50px 25px; }
+@media only screen and (max-width: 1400px) { .posts .posts__content { padding: 15px 10px 50px 15px; } }
 .posts .posts__date { margin-bottom: 5px; font-size: 13px; color: #74280d; }
 .posts .posts__title { font-size: 15px; }
 .posts .posts__fb { background: #3b5997; }
