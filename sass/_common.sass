@@ -753,67 +753,63 @@ a
 			display: inline-block
 			+s(production-arr)
 	.production__scheme
-		min-height: 100%
-		background: url(../img/production-line.jpg) repeat-y 50% 0 
-		text-align: center
-	.production__in
-		position: relative
-		display: inline-block
-		width: 739px
-		height: 900px
-		background: url(../img/production.jpg) no-repeat 0 0
-		vertical-align: top
+		padding-top: 40px
+		background: #FFF 
+	.production__scheme-in
+		width: 740px
+		margin: 0 auto
 	.production__step
-		position: absolute
-		width: 380px
-		+vertical
-	.production__step_1
-		top: 0 
-		left: 335px
-		height: 280px
-	.production__step_2
-		top: 310px
-		left: 25px
-		height: 350px
-	.production__step_3
-		top: 680px
-		left: 335px
-		height: 220px
-	.production__step-in
+		margin-top: -21px
+		font-size: 0
+		&:first-child
+			margin: 0
+	.production__pic, .production__content
 		display: inline-block
-		text-align: left
+		width: 370px
 		vertical-align: middle
 	.production__title
 		margin-bottom: 20px
-		font-size: 30px
-		line-height: 1
+		font-size: 35px
+		color: #54463A
+		line-height: 1.1
 	.production__text
 		+f
 		font-size: 17px
-	.production__more, .production__popup
-		position: absolute
-	.production__more
-		&:hover
-			.production__popup
-				display: block
-	.production__more_1
-		top: 411px
-		left: 547px
-		width: 110px
-		height: 110px
-		border-radius: 50%
-		.production__popup
-			top: -60px 
-			left: -360px
-	.production__popup
-		display: none
-		img
+		color: #8d8d8d 
+	.production__scheme-result
+		padding-bottom: 50px
+		background: #f2f2f2 
+		.production__pic
+			margin: 0 11px 0 -11px 
+	.production__beer
+		padding-bottom: 65px
+		background: #375D4C 
+		text-align: center
+	.production__beer-lines
+		margin-bottom: 55px
+		font-size: 0
+	.production__beer-list
+		padding-right: 5px
+		li
+			display: inline-block
+			width: 230px
+			vertical-align: top
+		i
+			display: inline-block
+			margin-bottom: 20px
+			vertical-align: top
+		span
 			display: block
-			border: 8px solid #fff
-			box-shadow: 0 0 5px 1px rgba(0,0,0,.17)
-		
-
-
+			text-transform: uppercase
+			+f
+			font-size: 14px
+			color: #FFF 
+	.production__beer-type-1
+		+s(production-beer1)
+	.production__beer-type-2
+		+s(production-beer2)
+	.production__beer-type-3
+		+s(production-beer3)
 
 
 

@@ -22,11 +22,11 @@ head.ready(function() {
 	// production
 	var production_go = $('.js-production-go'),
 			production_scheme = $('.js-production-scheme'),
+			production_scheme_top = production_scheme.offset().top,
 			section = $('.section');
 	production_go.on('click', function () {
-		var top = production_scheme.offset().top;
 		section.animate({
-    	  scrollTop: top
+    	  scrollTop: production_scheme_top
     	}, 500);
 	});
 
