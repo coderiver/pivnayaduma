@@ -19,4 +19,15 @@ head.ready(function() {
 		});
 	};
 
+	// production
+	var production_go = $('.js-production-go'),
+			production_scheme = $('.js-production-scheme'),
+			section = $('.section');
+	production_go.on('click', function () {
+		var top = production_scheme.offset().top;
+		section.animate({
+    	  scrollTop: top
+    	}, 500);
+	});
+
 });

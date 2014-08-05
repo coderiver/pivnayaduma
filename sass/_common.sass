@@ -99,7 +99,7 @@ a
 	overflow: auto
 	z-index: 6 
 	+rth(800)
-		padding: 0
+		padding: 20px 0
 
 .logo
 	display: inline-block
@@ -239,6 +239,14 @@ a
 	bottom: 0
 	background: #fff 
 	overflow: auto
+	// &::-webkit-scrollbar
+	// 	width: 15px
+	// 	height: 15px
+	// &::-webkit-scrollbar-thumb
+	// 	background: #555
+	// 	border: 3px solid #414141
+	// &::-webkit-scrollbar-track-piece
+	// 	background: #414141
 
 .posts
 	background: #FFF 
@@ -639,12 +647,171 @@ a
 		+f
 		font-size: 16px
 
+.contacts
+	.contacts__map
+		position: relative
+		width: 100%
+		padding-bottom: 60%
+	.contacts__map-in
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+	.contacts__in
+		padding: 40px 60px 50px 
+		font-size: 0
+		+rt(1200)
+			padding: 40px 40px 50px
+	.contacts__manager, .contacts__list
+		display: inline-block
+		vertical-align: top
+	.contacts__manager
+		width: 30%
+		padding-right: 60px
+		box-sizing: border-box
+		font-size: 15px
+		+rt(1200)
+			width: 35%
+	.contacts__list
+		width: 70%
+		+rt(1200)
+			width: 65%
+	.contacts__title
+		margin-bottom: 20px
+		font-size: 28px
+		line-height: 1
+	.contacts__manager-name
+		font-size: 22px
+	.contacts__manager-position, .contacts__manager-phone, .contacts__manager-mail
+		+f
+	.contacts__manager-position
+		margin-bottom: 25px
+	.contacts__manager-mail
+		a
+			color: #ADADAD 
+	.contacts__list-item
+		display: inline-block
+		width: 33%
+		margin-bottom: 25px
+		padding-right: 20px
+		vertical-align: top
+		box-sizing: border-box
+		+f
+		font-size: 15px
+		+rt(1200)
+			width: 50%
+		span
+			display: block
+		a
+			color: #ADADAD
 
-
-
-
-
-
+.production
+	height: 100%
+	.production__main
+		height: 100%
+		background: url(../img/production-bg.jpg) no-repeat 0 0
+		background-size: cover
+		+vertical
+	.production__main-in
+		display: inline-block
+		width: 420px	
+		vertical-align: middle
+		color: #fff 
+	.production__main-beer
+		display: inline-block
+		margin-bottom: 30px
+		+s(production-beer)
+		vertical-align: top
+	.production__main-title
+		position: relative
+		padding-bottom: 45px
+		font-size: 56px
+		line-height: 1
+		text-transform: uppercase
+		&:after
+			content: ""
+			position: absolute
+			bottom: 20px
+			left: 50%
+			width: 24px
+			height: 2px
+			margin-left: -12px
+			border: 1px solid #fff
+			border-width: 1px 0
+	.production__main-text
+		margin-bottom: 60px
+		+f
+		font-size: 17px
+	.production__main-arr
+		width: 62px
+		height: 62px
+		border-radius: 50%
+		background: rgba(0,0,0,.25)
+		font-size: 0
+		i
+			display: inline-block
+			+s(production-arr)
+	.production__scheme
+		min-height: 100%
+		background: url(../img/production-line.jpg) repeat-y 50% 0 
+		text-align: center
+	.production__in
+		position: relative
+		display: inline-block
+		width: 739px
+		height: 900px
+		background: url(../img/production.jpg) no-repeat 0 0
+		vertical-align: top
+	.production__step
+		position: absolute
+		width: 380px
+		+vertical
+	.production__step_1
+		top: 0 
+		left: 335px
+		height: 280px
+	.production__step_2
+		top: 310px
+		left: 25px
+		height: 350px
+	.production__step_3
+		top: 680px
+		left: 335px
+		height: 220px
+	.production__step-in
+		display: inline-block
+		text-align: left
+		vertical-align: middle
+	.production__title
+		margin-bottom: 20px
+		font-size: 30px
+		line-height: 1
+	.production__text
+		+f
+		font-size: 17px
+	.production__more, .production__popup
+		position: absolute
+	.production__more
+		&:hover
+			.production__popup
+				display: block
+	.production__more_1
+		top: 411px
+		left: 547px
+		width: 110px
+		height: 110px
+		border-radius: 50%
+		.production__popup
+			top: -60px 
+			left: -360px
+	.production__popup
+		display: none
+		img
+			display: block
+			border: 8px solid #fff
+			box-shadow: 0 0 5px 1px rgba(0,0,0,.17)
+		
 
 
 
