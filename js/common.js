@@ -25,9 +25,7 @@ head.ready(function() {
 			production_scheme_top = production_scheme.offset().top,
 			section = $('.section');
 	production_go.on('click', function () {
-		section.animate({
-    	  scrollTop: production_scheme_top
-    	}, 500);
+		section.animate({scrollTop: production_scheme_top}, 500);
 	});
 
 });
