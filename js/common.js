@@ -4,9 +4,16 @@ head.ready(function() {
 	var order = $('.js-order'),
 			order_trigger = $('.js-order-trigger');
 	order_trigger.on('click', function () {
-		order_trigger.addClass('is-active');
-		order.show();
+		order_trigger.toggleClass('is-active');
+		order.toggle();
 		return false;
+	});
+
+	$(document).on('click', function () {
+		order.hide();
+	});
+	order.find('.order__form, .order__done').on('click', function (event) {
+		event.stopPropagation();
 	});
 
 	// about slider
