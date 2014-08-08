@@ -42,11 +42,12 @@ a { text-decoration: none; }
 .nav:before, .nav:after { content: ""; position: absolute; left: 50%; width: 28px; height: 2px; margin-left: -14px; border: 1px solid #987761; border-width: 1px 0; }
 .nav:before { top: 0; }
 .nav:after { bottom: 0; }
-.nav > a { position: relative; display: block; padding: 9px 40px; font-family: "CharisSIL Regular", Arial, sans-serif; font-size: 18px; color: white; line-height: 1.2; }
-@media only screen and (max-height: 800px) { .nav > a { padding: 5px 20px; } }
-.nav > a:hover, .nav > a.is-active { color: #d8b89e; }
-.nav > a.nav__order.is-active { position: relative; }
-.nav > a.nav__order.is-active:after { content: ""; position: absolute; right: 0; top: 50%; margin-top: -7px; width: 0px; height: 0px; border-style: solid; border-width: 7px 7px 7px 0; border-color: transparent white transparent transparent; }
+.nav li.current_page_item a { color: #d8b89e; }
+.nav a { position: relative; display: block; padding: 9px 40px; font-family: "CharisSIL Regular", Arial, sans-serif; font-size: 18px; color: white; line-height: 1.2; }
+@media only screen and (max-height: 800px) { .nav a { padding: 5px 20px; } }
+.nav a:hover, .nav a.is-active, .nav a.current_page_item { color: #d8b89e; }
+.nav a.nav__order.is-active { position: relative; }
+.nav a.nav__order.is-active:after { content: ""; position: absolute; right: 0; top: 50%; margin-top: -7px; width: 0px; height: 0px; border-style: solid; border-width: 7px 7px 7px 0; border-color: transparent white transparent transparent; }
 
 .order { display: none; position: absolute; top: 0; left: 235px; bottom: 0; width: 360px; text-align: center; font-size: 0; z-index: 4; }
 .order:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
@@ -251,6 +252,8 @@ a { text-decoration: none; }
 .production .production__beer-type-1 { background: url('../img/icons-s1ea47230ac.png') 0 -751px no-repeat; width: 64px; height: 147px; }
 .production .production__beer-type-2 { background: url('../img/icons-s1ea47230ac.png') 0 -286px no-repeat; width: 64px; height: 147px; }
 .production .production__beer-type-3 { background: url('../img/icons-s1ea47230ac.png') 0 -443px no-repeat; width: 64px; height: 147px; }
+
+.article, .entry-content { height: 100%; }
 
 .slick-slider { position: relative; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: none; -webkit-tap-highlight-color: transparent; }
 

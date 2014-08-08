@@ -129,7 +129,11 @@ a
 		top: 0
 	&:after
 		bottom: 0
-	>a
+	li
+		&.current_page_item
+			a
+				color: #d8b89e
+	a
 		position: relative
 		display: block
 		padding: 9px 40px
@@ -139,7 +143,7 @@ a
 		line-height: 1.2
 		+rth(800)
 			padding: 5px 20px
-		&:hover, &.is-active
+		&:hover, &.is-active, &.current_page_item
 			color: #d8b89e
 		&.nav__order
 			&.is-active
@@ -811,7 +815,8 @@ a
 	.production__beer-type-3
 		+s(production-beer3)
 
-
+.article, .entry-content
+	height: 100%
 
 
 
